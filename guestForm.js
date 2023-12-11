@@ -26,11 +26,13 @@ function guestForm() {
   function displayGuest(guestItem) {
     const areaEle = document.getElementById('display-area');
     const html = `<div>
-        <span>firstname lastname</span>
+        <span>${guestItem.firstname} ${guestItem.lastname}</span>
         <span class="remove-icon" id="firstname-lastname" style="cursor:pointer;color:red">[X]</span>
       <div>
     `
-    insertAdjacentHTML('beforeend', html)
+    areaEle.insertAdjacentHTML('beforeend', html)
+    let spanEle = document.getElementById('firstname-lastname')
+    spanEle.addEventListener("click", removeGuest)
   }
 
   /* 2. Function to display one guest in the display area
