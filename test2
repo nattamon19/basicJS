@@ -1,0 +1,44 @@
+//65130500035 Nattamon Thongkhamon
+
+function addNewProduct() {
+    const inputEle = document.getElementById('product-input')
+    const divEle = document.getElementById('product-list')
+    const html = `<div id="abc" class="product-item">
+    <p>${inputEle.value}</p>
+    <button id="removebt">Remove</button>
+    </div>`
+    if (inputEle.value != '') {
+        divEle.insertAdjacentHTML('beforeend', html)
+        inputEle.value = '';
+        inputEle.focus();
+    }
+    const removeButtonEle = document.getElementById('removebt')
+    removeButtonEle.addEventListener('click', removeProduct(html))
+}
+
+function removeProduct(productId) {
+    let divEle = document.getElementById('product-list')
+    let blank = []
+    productId = blank
+    let index = blank.findIndex
+    blank.splice(productId, 1)
+    //divEle = productId.blank
+}
+
+function removeAllProduct() {
+    let divEle = document.getElementById('product-list')
+    divEle.innerHTML = `<span></span>`
+}
+
+function registerEvent() {
+    const addButtonEle = document.getElementById('add-button')
+    const removeAllButtonEle = document.getElementById('removeAll-button')
+    addButtonEle.addEventListener('click', () => {
+        addNewProduct()
+    })
+    removeAllButtonEle.addEventListener('click', () => {
+        removeAllProduct()
+    })
+}
+
+registerEvent()
